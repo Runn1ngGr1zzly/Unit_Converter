@@ -25,6 +25,7 @@ button {
     background-color: #FFFFFF;
     border: none;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 #container {
@@ -50,7 +51,7 @@ button {
 
 .main-title {
     font-size: 28px;
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 #conversions {

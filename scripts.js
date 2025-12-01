@@ -10,25 +10,27 @@ const feetToMeter = 0.3048;
 const gallontoLiter = 3.78541;
 const poundToKilo = 0.453592;
 
+//TODO: clear existing <p> elements when a new unit is entered or when the button is selected again
+
 convertBtn.addEventListener("click", function() {
     let baseVal = inputEl.value;
     //convert length
     if (baseVal > 1) {
-        lengthEl.innerHTML += `<p>${baseVal} meters = ${baseVal * meterToFeet} feet | ${baseVal} feet = ${baseVal * feetToMeter} meter</p>`;
+        lengthEl.innerHTML += `<p>${baseVal} meters = ${Number(baseVal * meterToFeet).toFixed(3)} feet | ${baseVal} feet = ${Number(baseVal * feetToMeter).toFixed(3)} meter</p>`;
     } else {
-        lengthEl.innerHTML += `<p>${baseVal} meter = ${baseVal * meterToFeet} feet | ${baseVal} foot = ${baseVal * feetToMeter} meters</p>`;
+        lengthEl.innerHTML += `<p>${baseVal} meter = ${Number(baseVal * meterToFeet).toFixed(3)} feet | ${baseVal} foot = ${Number(baseVal * feetToMeter).toFixed(3)} meters</p>`;
     };
     //convert volume
     if (baseVal > 1) {
-        volumeEl.innerHTML += `<p>${baseVal} liters = ${baseVal * literToGallon} gallons | ${baseVal} gallons = ${baseVal * gallontoLiter} liters</p>`;
+        volumeEl.innerHTML += `<p>${baseVal} liters = ${Number(baseVal * literToGallon).toFixed(3)} gallons | ${baseVal} gallons = ${Number(baseVal * gallontoLiter).toFixed(3)} liters</p>`;
     } else {
-        volumeEl.innerHTML += `<p>${baseVal} liter = ${baseVal * literToGallon} gallons | ${baseVal} gallon = ${baseVal * gallontoLiter} liters`;
+        volumeEl.innerHTML += `<p>${baseVal} liter = ${Number(baseVal * literToGallon).toFixed(3)} gallons | ${baseVal} gallon = ${Number(baseVal * gallontoLiter).toFixed(3)} liters`;
     };
     //convert mass
     if (baseVal > 1) {
-        massEl.innerHTML += `<p>${baseVal} kilograms = ${baseVal * kiloToPound} pounds | ${baseVal} pounds = ${baseVal * poundToKilo} kilograms</p>`;
+        massEl.innerHTML += `<p>${baseVal} kilograms = ${Number(baseVal * kiloToPound).toFixed(3)} pounds | ${baseVal} pounds = ${Number(baseVal * poundToKilo).toFixed(3)} kilograms</p>`;
     } else {
-        massEl.innerHTML += `<p>${baseVal} kilogram = ${baseVal * kiloToPound} pounds | ${baseVal} pound = ${baseVal * poundToKilo} kilograms</p>`;
+        massEl.innerHTML += `<p>${baseVal} kilogram = ${Number(baseVal * kiloToPound).toFixed(3)} pounds | ${baseVal} pound = ${Number(baseVal * poundToKilo).toFixed(3)} kilograms</p>`;
     };
 });
 
